@@ -15,3 +15,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pokedex-app12"
           heroku_email: "hartzkaaa@gmail.com"
+          healthcheck: "https://pokedex-app12.herokuapp.com/health"
+          checkstring: "ok"
+          healthcheck: "https://pokedex-app12.herokuapp.com/version"
+          checkstring: "2"
