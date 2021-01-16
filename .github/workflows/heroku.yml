@@ -17,3 +17,4 @@ jobs:
           heroku_email: "hartzkaaa@gmail.com"
           healthcheck: "https://pokedex-app12.herokuapp.com/health"
           checkstring: "2"
+          rollbackonhealthcheckfailed: true
