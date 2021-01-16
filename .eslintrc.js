@@ -2,7 +2,8 @@ module.exports = {
   "env": {
     "node": true,
     "es6": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "browser": true,
   },
   "extends": [
     "eslint:recommended",
@@ -23,6 +24,7 @@ module.exports = {
       "error",
         2
       ],
+    "no-console": "off",
     "linebreak-style": [
       "error",
       "unix"
