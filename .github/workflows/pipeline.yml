@@ -31,7 +31,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
       - name: Bump version and push tag
-        if: ${{ !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
+        if: ${{ !contains(join(toJson(github.event.commits.*.message)), '#skip') && github.event_name == 'push' }}
         uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
