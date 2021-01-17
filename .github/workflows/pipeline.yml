@@ -52,8 +52,16 @@ jobs:
         if: success()
       - uses: 8398a7/action-slack@v3
         with:
-          status: ${{ job.status }}
-          text: a new version deployed to ${{ secrets.HEROKU_URL }} (${process.env.AS_COMMIT}) by ${process.env.AS_AUTHOR} build took ${process.env.AS_TOOK}
+          status: custom
+          fields: commit,author,took
+          custom_payload: |
+            {
+              icon_emoji: ':octocat:',
+              attachments: [{
+                color: 'good',
+                text: `a new version deployed to ${{ secrets.HEROKU_URL }} (${process.env.AS_COMMIT}) by ${process.env.AS_AUTHOR} build took ${process.env.AS_TOOK}`,
+              }]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: success()
