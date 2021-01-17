@@ -19,5 +19,5 @@ jobs:
           heroku_app_name: "pokedex-app12"
           heroku_email: "hartzkaaa@gmail.com"
           healthcheck: "https://pokedex-app12.herokuapp.com/health"
-          checkstring: "2"
+          checkstring: "ok"
           rollbackonhealthcheckfailed: true
